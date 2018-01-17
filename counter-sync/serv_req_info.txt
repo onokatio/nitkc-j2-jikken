@@ -1,0 +1,15 @@
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>GED</sub_system>
+	<file>/quartus/edt/ged/ged_connector.h</file>
+	<line>373</line>
+	<callstack>
+	0x0ae00aed:
+	</callstack>
+	<error>file_db-&gt;add(this)</error>
+	<date>Tue Jan 16 11:34:10 2018</date>
+	<version>Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition</version>
+	<full_error>file_db-&gt;add(this)
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition </full_error>
+</internal_error>
+
