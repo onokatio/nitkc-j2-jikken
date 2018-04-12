@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Block1
-Tue Jan 16 11:16:11 2018
+Mon Jan 29 19:04:54 2018
 Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
 
 
@@ -39,16 +39,16 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                            ;
 +-------------------------------+-----------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Tue Jan 16 11:16:10 2018   ;
+; Analysis & Synthesis Status   ; Successful - Mon Jan 29 19:04:54 2018   ;
 ; Quartus II Version            ; 8.1 Build 163 10/28/2008 SJ Web Edition ;
 ; Revision Name                 ; Block1                                  ;
 ; Top-level Entity Name         ; Block1                                  ;
 ; Family                        ; Stratix II                              ;
 ; Logic utilization             ; N/A                                     ;
-;     Combinational ALUTs       ; 4                                       ;
-;     Dedicated logic registers ; 3                                       ;
-; Total registers               ; 3                                       ;
-; Total pins                    ; 6                                       ;
+;     Combinational ALUTs       ; 1                                       ;
+;     Dedicated logic registers ; 2                                       ;
+; Total registers               ; 2                                       ;
+; Total pins                    ; 4                                       ;
 ; Total virtual pins            ; 0                                       ;
 ; Total block memory bits       ; 0                                       ;
 ; DSP block 9-bit elements      ; 0                                       ;
@@ -152,38 +152,38 @@ applicable agreement for further details.
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 4     ;
-; Dedicated logic registers                     ; 3     ;
+; Estimated ALUTs Used                          ; 1     ;
+; Dedicated logic registers                     ; 2     ;
 ;                                               ;       ;
 ; Estimated ALUTs Unavailable                   ; 0     ;
 ;                                               ;       ;
-; Total combinational functions                 ; 4     ;
+; Total combinational functions                 ; 1     ;
 ; Combinational ALUT usage by number of inputs  ;       ;
 ;     -- 7 input functions                      ; 0     ;
 ;     -- 6 input functions                      ; 0     ;
 ;     -- 5 input functions                      ; 0     ;
 ;     -- 4 input functions                      ; 0     ;
-;     -- <=3 input functions                    ; 4     ;
+;     -- <=3 input functions                    ; 1     ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 4     ;
+;     -- normal mode                            ; 1     ;
 ;     -- extended LUT mode                      ; 0     ;
 ;     -- arithmetic mode                        ; 0     ;
 ;     -- shared arithmetic mode                 ; 0     ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 4     ;
+; Estimated ALUT/register pairs used            ; 2     ;
 ;                                               ;       ;
-; Total registers                               ; 3     ;
-;     -- Dedicated logic registers              ; 3     ;
+; Total registers                               ; 2     ;
+;     -- Dedicated logic registers              ; 2     ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 2     ;
+; Estimated ALMs:  partially or completely used ; 1     ;
 ;                                               ;       ;
-; I/O pins                                      ; 6     ;
+; I/O pins                                      ; 4     ;
 ; Maximum fan-out node                          ; inst  ;
-; Maximum fan-out                               ; 4     ;
-; Total fan-out                                 ; 24    ;
-; Average fan-out                               ; 1.85  ;
+; Maximum fan-out                               ; 3     ;
+; Total fan-out                                 ; 9     ;
+; Average fan-out                               ; 1.29  ;
 +-----------------------------------------------+-------+
 
 
@@ -192,7 +192,7 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
-; |Block1                    ; 4 (4)             ; 3 (3)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 6    ; 0            ; |Block1             ; work         ;
+; |Block1                    ; 1 (1)             ; 2 (2)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 4    ; 0            ; |Block1             ; work         ;
 +----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -202,10 +202,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3     ;
+; Total registers                              ; 2     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -218,7 +218,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
-    Info: Processing started: Tue Jan 16 11:16:04 2018
+    Info: Processing started: Mon Jan 29 19:04:52 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Block1 -c Block1
 Info: Found 1 design units, including 1 entities, in source file //vmware-host/Shared Folders/home/jikken/counter/Block1.bdf
     Info: Found entity 1: Block1
@@ -226,14 +226,14 @@ Warning: EDA synthesis tool is specified as "Custom", but Library Mapping File i
 Warning: EDA synthesis tool is specified as "Custom", but VCC is not specified
 Warning: EDA synthesis tool is specified as "Custom", but GND is not specified
 Info: Elaborating entity "Block1" for the top level hierarchy
-Info: Implemented 10 device resources after synthesis - the final resource count might be different
-    Info: Implemented 3 input pins
-    Info: Implemented 3 output pins
-    Info: Implemented 4 logic cells
+Info: Implemented 6 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 2 output pins
+    Info: Implemented 2 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 196 megabytes
-    Info: Processing ended: Tue Jan 16 11:16:11 2018
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Processing ended: Mon Jan 29 19:04:54 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

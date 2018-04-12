@@ -1,5 +1,5 @@
 Assembler report for Block1
-Tue Jan 16 11:16:24 2018
+Mon Jan 29 19:05:03 2018
 Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: //vmware-host/Shared Folders/home/jikken/counter/Block1.sof
-  6. Assembler Device Options: //vmware-host/Shared Folders/home/jikken/counter/Block1.pof
+  5. Assembler Device Options: //vmware-host/Shared Folders/home/jikken/counter-sync/Block1.sof
+  6. Assembler Device Options: //vmware-host/Shared Folders/home/jikken/counter-sync/Block1.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Jan 16 11:16:24 2018 ;
+; Assembler Status      ; Successful - Mon Jan 29 19:05:03 2018 ;
 ; Revision Name         ; Block1                                ;
 ; Top-level Entity Name ; Block1                                ;
 ; Family                ; Stratix II                            ;
@@ -77,37 +77,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-------------------------------------------------------------+
-; Assembler Generated Files                                   ;
-+-------------------------------------------------------------+
-; File Name                                                   ;
-+-------------------------------------------------------------+
-; //vmware-host/Shared Folders/home/jikken/counter/Block1.sof ;
-; //vmware-host/Shared Folders/home/jikken/counter/Block1.pof ;
-+-------------------------------------------------------------+
++------------------------------------------------------------------+
+; Assembler Generated Files                                        ;
++------------------------------------------------------------------+
+; File Name                                                        ;
++------------------------------------------------------------------+
+; //vmware-host/Shared Folders/home/jikken/counter-sync/Block1.sof ;
+; //vmware-host/Shared Folders/home/jikken/counter-sync/Block1.pof ;
++------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Assembler Device Options: //vmware-host/Shared Folders/home/jikken/counter/Block1.sof ;
-+----------------+----------------------------------------------------------------------+
-; Option         ; Setting                                                              ;
-+----------------+----------------------------------------------------------------------+
-; Device         ; EP2S15F484C3                                                         ;
-; JTAG usercode  ; 0xFFFFFFFF                                                           ;
-; Checksum       ; 0x0027753C                                                           ;
-+----------------+----------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Assembler Device Options: //vmware-host/Shared Folders/home/jikken/counter-sync/Block1.sof ;
++----------------+---------------------------------------------------------------------------+
+; Option         ; Setting                                                                   ;
++----------------+---------------------------------------------------------------------------+
+; Device         ; EP2S15F484C3                                                              ;
+; JTAG usercode  ; 0xFFFFFFFF                                                                ;
+; Checksum       ; 0x0027662A                                                                ;
++----------------+---------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Assembler Device Options: //vmware-host/Shared Folders/home/jikken/counter/Block1.pof ;
-+--------------------+------------------------------------------------------------------+
-; Option             ; Setting                                                          ;
-+--------------------+------------------------------------------------------------------+
-; Device             ; EPC16                                                            ;
-; JTAG usercode      ; 0xFFFFFFFF                                                       ;
-; Checksum           ; 0x1EF5E7B7                                                       ;
-; Compression Ratio  ; 3                                                                ;
-+--------------------+------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Assembler Device Options: //vmware-host/Shared Folders/home/jikken/counter-sync/Block1.pof ;
++--------------------+-----------------------------------------------------------------------+
+; Option             ; Setting                                                               ;
++--------------------+-----------------------------------------------------------------------+
+; Device             ; EPC16                                                                 ;
+; JTAG usercode      ; 0xFFFFFFFF                                                            ;
+; Checksum           ; 0x1EF65DBA                                                            ;
+; Compression Ratio  ; 3                                                                     ;
++--------------------+-----------------------------------------------------------------------+
 
 
 +--------------------+
@@ -116,14 +116,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
-    Info: Processing started: Tue Jan 16 11:16:21 2018
+    Info: Processing started: Mon Jan 29 19:05:01 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Block1 -c Block1
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 207 megabytes
-    Info: Processing ended: Tue Jan 16 11:16:25 2018
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Processing ended: Mon Jan 29 19:05:04 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

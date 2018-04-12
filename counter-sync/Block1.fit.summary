@@ -1,4 +1,4 @@
-Fitter Status : Successful - Tue Jan 16 11:16:17 2018
+Fitter Status : Successful - Mon Jan 29 19:04:59 2018
 Quartus II Version : 8.1 Build 163 10/28/2008 SJ Web Edition
 Revision Name : Block1
 Top-level Entity Name : Block1
@@ -6,10 +6,10 @@ Family : Stratix II
 Device : EP2S15F484C3
 Timing Models : Final
 Logic utilization : < 1 %
-    Combinational ALUTs : 4 / 12,480 ( < 1 % )
-    Dedicated logic registers : 3 / 12,480 ( < 1 % )
-Total registers : 3
-Total pins : 6 / 343 ( 2 % )
+    Combinational ALUTs : 1 / 12,480 ( < 1 % )
+    Dedicated logic registers : 2 / 12,480 ( < 1 % )
+Total registers : 2
+Total pins : 4 / 343 ( 1 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 419,328 ( 0 % )
 DSP block 9-bit elements : 0 / 96 ( 0 % )

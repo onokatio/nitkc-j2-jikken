@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II"
 -- VERSION "Version 8.1 Build 163 10/28/2008 SJ Web Edition"
 
--- DATE "01/16/2018 11:16:32"
+-- DATE "01/29/2018 19:05:09"
 
 -- 
 -- Device: Altera EP2S15F484C3 Package FBGA484
@@ -32,12 +32,10 @@ USE stratixii.stratixii_components.all;
 
 ENTITY 	Block1 IS
     PORT (
-	Q1 : OUT std_logic;
-	K : IN std_logic;
-	J : IN std_logic;
-	CLK : IN std_logic;
 	Q2 : OUT std_logic;
-	Q3 : OUT std_logic
+	VCC : IN std_logic;
+	CLK : IN std_logic;
+	Q1 : OUT std_logic
 	);
 END Block1;
 
@@ -50,50 +48,38 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_Q1 : std_logic;
-SIGNAL ww_K : std_logic;
-SIGNAL ww_J : std_logic;
-SIGNAL ww_CLK : std_logic;
 SIGNAL ww_Q2 : std_logic;
-SIGNAL ww_Q3 : std_logic;
-SIGNAL \inst13~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_VCC : std_logic;
+SIGNAL ww_CLK : std_logic;
+SIGNAL ww_Q1 : std_logic;
+SIGNAL \CLK~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \CLK~combout\ : std_logic;
-SIGNAL \K~combout\ : std_logic;
-SIGNAL \J~combout\ : std_logic;
-SIGNAL \inst~13_combout\ : std_logic;
-SIGNAL \inst7~13_combout\ : std_logic;
-SIGNAL \inst7~regout\ : std_logic;
-SIGNAL \inst6~13_combout\ : std_logic;
-SIGNAL \inst6~regout\ : std_logic;
-SIGNAL \inst13~combout\ : std_logic;
-SIGNAL \inst13~clkctrl_outclk\ : std_logic;
+SIGNAL \CLK~clkctrl_outclk\ : std_logic;
+SIGNAL \VCC~combout\ : std_logic;
+SIGNAL \inst~21_combout\ : std_logic;
 SIGNAL \inst~regout\ : std_logic;
-SIGNAL \ALT_INV_inst~regout\ : std_logic;
+SIGNAL \inst6~feeder_combout\ : std_logic;
+SIGNAL \inst6~regout\ : std_logic;
 SIGNAL \ALT_INV_inst6~regout\ : std_logic;
-SIGNAL \ALT_INV_inst7~regout\ : std_logic;
-SIGNAL \ALT_INV_K~combout\ : std_logic;
-SIGNAL \ALT_INV_J~combout\ : std_logic;
-SIGNAL \ALT_INV_CLK~combout\ : std_logic;
+SIGNAL \ALT_INV_inst~regout\ : std_logic;
+SIGNAL \ALT_INV_VCC~combout\ : std_logic;
+SIGNAL \ALT_INV_CLK~clkctrl_outclk\ : std_logic;
 
 BEGIN
 
-Q1 <= ww_Q1;
-ww_K <= K;
-ww_J <= J;
-ww_CLK <= CLK;
 Q2 <= ww_Q2;
-Q3 <= ww_Q3;
+ww_VCC <= VCC;
+ww_CLK <= CLK;
+Q1 <= ww_Q1;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
-\inst13~clkctrl_INCLK_bus\ <= (gnd & gnd & gnd & \inst13~combout\);
-\ALT_INV_inst~regout\ <= NOT \inst~regout\;
+\CLK~clkctrl_INCLK_bus\ <= (gnd & gnd & gnd & \CLK~combout\);
 \ALT_INV_inst6~regout\ <= NOT \inst6~regout\;
-\ALT_INV_inst7~regout\ <= NOT \inst7~regout\;
-\ALT_INV_K~combout\ <= NOT \K~combout\;
-\ALT_INV_J~combout\ <= NOT \J~combout\;
-\ALT_INV_CLK~combout\ <= NOT \CLK~combout\;
+\ALT_INV_inst~regout\ <= NOT \inst~regout\;
+\ALT_INV_VCC~combout\ <= NOT \VCC~combout\;
+\ALT_INV_CLK~clkctrl_outclk\ <= NOT \CLK~clkctrl_outclk\;
 
 \CLK~I\ : stratixii_io
 -- pragma translate_off
@@ -128,175 +114,18 @@ PORT MAP (
 	padio => ww_CLK,
 	combout => \CLK~combout\);
 
-\K~I\ : stratixii_io
--- pragma translate_off
-GENERIC MAP (
-	ddio_mode => "none",
-	ddioinclk_input => "negated_inclk",
-	dqs_delay_buffer_mode => "none",
-	dqs_out_mode => "none",
-	inclk_input => "normal",
-	input_async_reset => "none",
-	input_power_up => "low",
-	input_register_mode => "none",
-	input_sync_reset => "none",
-	oe_async_reset => "none",
-	oe_power_up => "low",
-	oe_register_mode => "none",
-	oe_sync_reset => "none",
-	operation_mode => "input",
-	output_async_reset => "none",
-	output_power_up => "low",
-	output_register_mode => "none",
-	output_sync_reset => "none",
-	sim_dqs_delay_increment => 0,
-	sim_dqs_intrinsic_delay => 0,
-	sim_dqs_offset_increment => 0)
--- pragma translate_on
-PORT MAP (
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	devoe => ww_devoe,
-	oe => GND,
-	padio => ww_K,
-	combout => \K~combout\);
-
-\J~I\ : stratixii_io
--- pragma translate_off
-GENERIC MAP (
-	ddio_mode => "none",
-	ddioinclk_input => "negated_inclk",
-	dqs_delay_buffer_mode => "none",
-	dqs_out_mode => "none",
-	inclk_input => "normal",
-	input_async_reset => "none",
-	input_power_up => "low",
-	input_register_mode => "none",
-	input_sync_reset => "none",
-	oe_async_reset => "none",
-	oe_power_up => "low",
-	oe_register_mode => "none",
-	oe_sync_reset => "none",
-	operation_mode => "input",
-	output_async_reset => "none",
-	output_power_up => "low",
-	output_register_mode => "none",
-	output_sync_reset => "none",
-	sim_dqs_delay_increment => 0,
-	sim_dqs_intrinsic_delay => 0,
-	sim_dqs_offset_increment => 0)
--- pragma translate_on
-PORT MAP (
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	devoe => ww_devoe,
-	oe => GND,
-	padio => ww_J,
-	combout => \J~combout\);
-
-\inst~13\ : stratixii_lcell_comb
--- Equation(s):
--- \inst~13_combout\ = \inst~regout\ & \J~combout\ & ( !\K~combout\ ) # !\inst~regout\ & \J~combout\ # \inst~regout\ & !\J~combout\ & ( !\K~combout\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000110011001100110011111111111111111100110011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \ALT_INV_K~combout\,
-	datae => \ALT_INV_inst~regout\,
-	dataf => \ALT_INV_J~combout\,
-	combout => \inst~13_combout\);
-
-\inst7~13\ : stratixii_lcell_comb
--- Equation(s):
--- \inst7~13_combout\ = \inst7~regout\ & ( !\K~combout\ ) # !\inst7~regout\ & ( \J~combout\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101111100001111000001010101010101011111000011110000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ALT_INV_J~combout\,
-	datac => \ALT_INV_K~combout\,
-	datae => \ALT_INV_inst7~regout\,
-	combout => \inst7~13_combout\);
-
-inst7 : stratixii_lcell_ff
-PORT MAP (
-	clk => \ALT_INV_inst6~regout\,
-	datain => \inst7~13_combout\,
-	aclr => \inst13~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \inst7~regout\);
-
-\inst6~13\ : stratixii_lcell_comb
--- Equation(s):
--- \inst6~13_combout\ = \J~combout\ & ( !\K~combout\ # !\inst6~regout\ ) # !\J~combout\ & ( !\K~combout\ & \inst6~regout\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011001100000000001100110011111111110011001111111111001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \ALT_INV_K~combout\,
-	datad => \ALT_INV_inst6~regout\,
-	dataf => \ALT_INV_J~combout\,
-	combout => \inst6~13_combout\);
-
-inst6 : stratixii_lcell_ff
-PORT MAP (
-	clk => \ALT_INV_inst~regout\,
-	datain => \inst6~13_combout\,
-	aclr => \inst13~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \inst6~regout\);
-
-inst13 : stratixii_lcell_comb
--- Equation(s):
--- \inst13~combout\ = !\inst6~regout\ & ( \inst7~regout\ & \inst~regout\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000001111000000000000111100000000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datac => \ALT_INV_inst7~regout\,
-	datad => \ALT_INV_inst~regout\,
-	dataf => \ALT_INV_inst6~regout\,
-	combout => \inst13~combout\);
-
-\inst13~clkctrl\ : stratixii_clkctrl
+\CLK~clkctrl\ : stratixii_clkctrl
 -- pragma translate_off
 GENERIC MAP (
 	clock_type => "global clock")
 -- pragma translate_on
 PORT MAP (
-	inclk => \inst13~clkctrl_INCLK_bus\,
+	inclk => \CLK~clkctrl_INCLK_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	outclk => \inst13~clkctrl_outclk\);
+	outclk => \CLK~clkctrl_outclk\);
 
-inst : stratixii_lcell_ff
-PORT MAP (
-	clk => \ALT_INV_CLK~combout\,
-	datain => \inst~13_combout\,
-	aclr => \inst13~clkctrl_outclk\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \inst~regout\);
-
-\Q1~I\ : stratixii_io
+\VCC~I\ : stratixii_io
 -- pragma translate_off
 GENERIC MAP (
 	ddio_mode => "none",
@@ -312,7 +141,7 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	operation_mode => "output",
+	operation_mode => "input",
 	output_async_reset => "none",
 	output_power_up => "low",
 	output_register_mode => "none",
@@ -322,12 +151,58 @@ GENERIC MAP (
 	sim_dqs_offset_increment => 0)
 -- pragma translate_on
 PORT MAP (
-	datain => \inst~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
-	oe => VCC,
-	padio => ww_Q1);
+	oe => GND,
+	padio => ww_VCC,
+	combout => \VCC~combout\);
+
+\inst~21\ : stratixii_lcell_comb
+-- Equation(s):
+-- \inst~21_combout\ = \inst~regout\ & \inst6~regout\ & ( !\VCC~combout\ ) # \inst~regout\ & !\inst6~regout\ & ( !\VCC~combout\ ) # !\inst~regout\ & !\inst6~regout\
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1111111111111111110011001100110000000000000000001100110011001100",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \ALT_INV_VCC~combout\,
+	datae => \ALT_INV_inst~regout\,
+	dataf => \ALT_INV_inst6~regout\,
+	combout => \inst~21_combout\);
+
+inst : stratixii_lcell_ff
+PORT MAP (
+	clk => \ALT_INV_CLK~clkctrl_outclk\,
+	datain => \inst~21_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \inst~regout\);
+
+\inst6~feeder\ : stratixii_lcell_comb
+-- Equation(s):
+-- \inst6~feeder_combout\ = \inst~regout\
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000000000011111111111111111111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataf => \ALT_INV_inst~regout\,
+	combout => \inst6~feeder_combout\);
+
+inst6 : stratixii_lcell_ff
+PORT MAP (
+	clk => \ALT_INV_CLK~clkctrl_outclk\,
+	datain => \inst6~feeder_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \inst6~regout\);
 
 \Q2~I\ : stratixii_io
 -- pragma translate_off
@@ -362,7 +237,7 @@ PORT MAP (
 	oe => VCC,
 	padio => ww_Q2);
 
-\Q3~I\ : stratixii_io
+\Q1~I\ : stratixii_io
 -- pragma translate_off
 GENERIC MAP (
 	ddio_mode => "none",
@@ -388,12 +263,12 @@ GENERIC MAP (
 	sim_dqs_offset_increment => 0)
 -- pragma translate_on
 PORT MAP (
-	datain => \inst7~regout\,
+	datain => \inst~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
 	oe => VCC,
-	padio => ww_Q3);
+	padio => ww_Q1);
 END structure;
 
 
